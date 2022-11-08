@@ -19,7 +19,10 @@ const OAUTH_CLIENT_SECRET = process.env.OAUTH_CLIENT_SECRET
 const OAUTH_REFRESH_TOKEN = process.env.OAUTH_REFRESH_TOKEN
 const SERVER_URI = 'https://aktiivinen-keppari.herokuapp.com/'
 
-
+const RDS_HOSTNAME = process.env.RDS_HOSTNAME
+const RDS_USERNAME = process.env.RDS_USERNAME
+const RDS_PASSWORD = process.env.RDS_PASSWORD
+const RDS_PORT = process.env.RDS_PORT
 
 module.exports = {
   PORT,
@@ -29,5 +32,9 @@ module.exports = {
   AWS_ACCESS_KEY,
   AWS_BUCKET_NAME,
   AWS_REGION,
-  SERVER_URI
+  SERVER_URI,
+  RDS_HOSTNAME,
+  RDS_USERNAME,
+  RDS_PASSWORD,
+  RDS_PORT
 }
