@@ -7,7 +7,7 @@ imageRouter.get('/', async (request,response) => {
   response.json(images.map(image => image.toJSON()))
 })
 imageRouter.get('/test', async (request,response) => {
-response.json({test:"ok"})
+response.json({test:"ok ok"})
 })
 
 module.exports = imageRouter
