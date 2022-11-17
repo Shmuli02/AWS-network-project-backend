@@ -8,6 +8,7 @@ const logger = require('./utils/logger')
 const path = require('path');
 const nodemailer = require("nodemailer");
 require("dotenv").config();
+const mysql = require('mysql');
 
 const usersRouter = require('./controllers/users')
 const loginRouter = require('./controllers/login')
@@ -18,8 +19,6 @@ const uploadRouter = require('./controllers/upload')
 const emailRouter = require('./controllers/emailer')
 const imageRouter = require('./controllers/images')
 
-
-
 logger.info('connecting to', config.MONGODB_URL)
 
 mongoose.connect(config.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true })
@@ -29,8 +28,6 @@ mongoose.connect(config.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology
   .catch((error) => {
     logger.error('error connecting to MongoDB', error.message)
   })
-
-
 
 app.use(cors())
 app.use(express.static(path.join(__dirname, 'build')));
